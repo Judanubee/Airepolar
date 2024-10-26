@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #5783bc;
+    --background-color: #cadffb;
+    --dark-color: #2d2c55;
+    --bluebonito: #5f95e7; /* Color azul bonito */
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.customer-support i {
+    font-size: 3.3rem;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container-logo i {
+    font-size: 3rem;
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.container-navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* Justify content to start */
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    list-style: none;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    z-index: 10;
+    border-radius: 0; /* Hace que el borde del submenu sea cuadrado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.submenu a {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    padding: 0.5rem 2rem;
+    display: block;
+}
+
+.submenu a:hover {
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.banner {
+    background-image: linear-gradient(100deg, #000000, #00000020), url('#');
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-banner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content-banner h2 {
+    color: #a0c5f7;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.appointment-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 0; /* Hace que el borde del formulario sea cuadrado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 50rem;
+}
+
+.appointment-form div {
+    margin-bottom: 1.5rem;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0; /* Hace que los bordes de los inputs y textarea sean cuadrados */
+    font-size: 1.6rem;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0; /* Hace que los bordes del botón sean cuadrados */
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-color);
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+
+.agendas-section {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+}
+
+.agendas-section h2 {
+    text-align: center;
+    color: var(--dark-color);
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+.agendas-table {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.agendas-table th,
+.agendas-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1.6rem;
+}
+
+.agendas-table th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.agendas-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.agendas-table tr:hover {
+    background-color: #f1f1f1;
+}
+.btn {
+    background-color: var(--bluebonito); /* Usa la variable de color azul bonito */
+    color: #fff; /* Texto blanco */
+    padding: 1rem 2rem; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    font-weight: 500; /* Grosor de la fuente */
+    display: inline-block; /* Hace que el enlace se comporte como un botón */
+    text-align: center; /* Centra el texto */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.btn:hover {
+    background-color: var(--dark-color); /* Cambia a color oscuro al pasar el ratón */
+}
+
+embed {
+  width: 100%; /* para hacerlo responsive */
+  height: 100vh;
+}
+
