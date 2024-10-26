@@ -1,9 +1,9 @@
 <?php
 //configuracion de variables
-$servername = "127.0.0.1";
-$username = "u509327142_Judag31";
-$password = "RojoVerde27";
-$dbname = "u509327142_climapolardame";
+$servername = 'mysql-juliodanielbernal.alwaysdata.net';
+$dbname = 'juliodanielbernal_db2';
+$username= '377233';
+$password = '#RojosVerdes';
 //crear conexion
 $conn = new mysqli($servername, $username, $password, $dbname);
 

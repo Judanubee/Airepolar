@@ -15,18 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Escapar las entradas del usuario
     $nombre = htmlspecialchars($_POST['nombre']);
-    $usario = htmlspecialchars($_POST['usuario']);
+    $usuario = htmlspecialchars($_POST['usuario']);
     $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT); // Cifrado de la contraseña
     $rol = $_POST['rol'];   
 
     // Verificamos si el usuario existe
-    if ($check_email = $conn->prepare('SELECT usuario FROM usuarios WHERE usuario = ?')) {
-        $check_email->bind_param("s", $correo);
-        $check_email->execute();
-        $check_email->store_result();
+    if ($check_usuario = $conn->prepare('SELECT usuario FROM usuarios WHERE usuario = ?')) {
+        $check_usuario->bind_param("s", $usuario);
+        $check_usuario->execute();
+        $check_usuario->store_result();
 
         // Si el correo ya existe, mostrar un alert
-        if ($check_email->num_rows > 0) {
+        if ($check_usuario->num_rows > 0) {
             echo "<script>alert('El usuario ya existe'); window.location.href='register.php';</script>";
         } else {
             // Insertar el nuevo usuario
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <form action="register.php" method="post">
     Nombre: <input type="text" name="nombre" required>
     <br>
-    Correo: <input type="email" name="correo" required>
+    Usuario: <input type="text" name="usuario" required>
     <br>
     Contraseña: <input type="password" name="password" required>
     <br>
