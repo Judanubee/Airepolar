@@ -1,0 +1,62 @@
+/* Agregar tus estilos CSS aquí */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #5783bc;
+    --background-color: #cadffb;
+    --dark-color: #2d2c55;
+    --bluebonito: #5f95e7; /* Color azul bonito */
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.producto {
+    background-color: var(--background-color);
+    border: 1px solid var(--dark-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: calc(33.333% - 4rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.producto h2 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.producto p {
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
