@@ -80,8 +80,8 @@
                         echo "<td>" . $row['nombre'] . "</td>";
                         echo "<td>" . $row['rol'] . "</td>";
                         echo "<td>
-                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id_trabajador'] . "'>Editar</a>
-                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id_trabajador'] . "'>Eliminar</a>
+                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id'] . "'>Editar</a>
+                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id'] . "'>Eliminar</a>
                             </td>";
                         echo "</tr>";
                     }
