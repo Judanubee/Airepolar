@@ -29,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($rol == 'Admin') {
                 header("Location: /Airepolar/administrador/lista_usuarios.php");
             } elseif ($rol == 'Secretaria de compras') {
-                header("Location: /Airepolar/secretaria_compras/compras.html");
+                header("Location: /Airepolar/secretaria/compras.html");
             } elseif ($rol == 'Secretaria de ventas') {
-                header("Location: /Airepolar/secretaria_ventas/ventas.html");
+                header("Location: /Airepolar/inventario/index.php");
             } elseif ($rol == 'Tecnico') {
                 header("Location: /Airepolar/tecnico/tecnico.html");
             } elseif ($rol == 'Cliente') {
-                header("Location: /Airepolar/cliente/cliente.html");
+                header("Location: /Airepolar/catalogo/catalogo.php");
             }
             exit();
         } else {

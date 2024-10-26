@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Verificamos si la inserción fue exitosa
                 if ($stmt->execute()) {
-                    echo "<script>alert('Registro exitoso'); window.location.href='login.php';</script>";
+                    echo "<script>alert('Registro exitoso'); window.location.href='index.html';</script>";
                 } else {
                     echo "<script>alert('Error al registrar el usuario'); window.location.href='register.php';</script>";
                 }
