@@ -59,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
-<link rel="stylesheet" href="css/styles.css">
-<!-- Formulario con token CSRF -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- Formulario con token CSRF -->
 <form action="register.php" method="post">
     Nombre: <input type="text" name="nombre" required>
     <br>

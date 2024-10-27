@@ -2,9 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Administrador</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/index-style.css">
-    <link rel="stylesheet" href="../css/administrador-style.css">
+    <link rel="stylesheet" href="../css/index.css" />
+
 </head>
 <body>
 <header>
@@ -94,3 +93,5 @@
 </div>
 </body>
 </html>
+
+
