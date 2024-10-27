@@ -1,21 +1,11 @@
 <?php
-$servername = "127.0.0.1";
-$username = "u509327142_Judag31";
-$password = "RojoVerde27";
-$dbname = "u509327142_climapolardame";
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
+session_start();
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM trabajadores WHERE id_trabajador=$id";
+$sql = "SELECT * FROM usuarios WHERE id=$id";
 $result = $conn->query($sql);
-$user = $result->fetch_assoc();
+$usuario = $result->fetch_assoc();
 
 $conn->close();
 ?>
@@ -40,11 +30,11 @@ $conn->close();
         ?>
         <div class="form-container">
             <form action="actualizar_usuarios.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $user['id_trabajador']; ?>">
+                <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
                 
                 <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" name="username" value="<?php echo $user['usuario']; ?>" required>
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="id" name="usuario" value="<?php echo $usuario['usuario']; ?>" required>
                 </div>
                 
                 <div class="form-group">
@@ -54,21 +44,18 @@ $conn->close();
                 
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" value="<?php echo $user['nombre']; ?>" required>
+                    <input type="text" id="nombre" name="nombre" value="<?php echo $usuario['nombre']; ?>" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" value="<?php echo $user['apellido']; ?>" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="tipo_usuario">Tipo de Usuario</label>
-                    <select id="tipo_usuario" name="tipo_usuario" required>
-                        <option value="administrador" <?php if ($user['tipo_usuario'] == 'administrador') echo 'selected'; ?>>Administrador</option>
-                        <option value="op_inventario" <?php if ($user['tipo_usuario'] == 'op_inventario') echo 'selected'; ?>>Operador Inventario</option>
-                        <option value="op_servicios" <?php if ($user['tipo_usuario'] == 'op_servicios') echo 'selected'; ?>>Operador Servicios</option>
-                        <option value="admin_catalogo" <?php if ($user['tipo_usuario'] == 'admin_catalogo') echo 'selected'; ?>>Administrador Catálogo</option>
+                    <label for="rol">Rol</label>
+                    <select id="rol" name="rol" required>
+                        <option value="Admin" <?php if ($usuario['rol'] == 'Admin') echo 'selected'; ?>>Admin</option>
+                        <option value="Secretaria de compras" <?php if ($usuario['rol'] == 'Secretaria de compras') echo 'selected'; ?>>Secretaria de compras</option>
+                        <option value="Secretaria de ventas" <?php if ($usuario['rol'] == 'Secretaria de ventas') echo 'selected'; ?>>Secretaria de ventas</option>
+                        <option value="Tecnico" <?php if ($usuario['rol'] == 'Tecnico') echo 'selected'; ?>>Tecnico</option>
+                        <option value="Cliente" <?php if ($usuario['rol'] == 'Cliente') echo 'selected'; ?>>Cliente</option>
+
                     </select>
                 </div>
                 

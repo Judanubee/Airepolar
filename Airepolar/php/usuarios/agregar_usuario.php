@@ -1,30 +1,19 @@
 <?php
-$servername = "127.0.0.1";
-$username = "u509327142_Judag31";
-$password = "RojoVerde27";
-$dbname = "u509327142_climapolardame";
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
+session_start();
 
 // Obtener datos del formulario
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 $nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$tipo_usuario = $_POST['tipo_usuario'];
+$rol = $_POST['rol'];
 
 // Hashear la contraseña (puedes usar password_hash si deseas)
 $contraseña_hashed = password_hash($contraseña, PASSWORD_DEFAULT); // Asegúrate de usar un hash
 
 // Preparar la consulta SQL
-$sql = "INSERT INTO trabajadores (usuario, contraseña, nombre, apellido, tipo_usuario) 
-        VALUES ('$usuario', '$contraseña_hashed', '$nombre', '$apellido', '$tipo_usuario')";
+$sql = "INSERT INTO usuarios (usuario, contraseña, nombre, rol) 
+        VALUES ('$usuario', '$contraseña_hashed', '$nombre', '$rol')";
 
 if ($conn->query($sql) === TRUE) {
     // Si la inserción es exitosa, redirigir con mensaje de éxito
