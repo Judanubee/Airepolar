@@ -1,6 +1,6 @@
 <?php
 
-include 'Airepolar\db.php';
+include '../../db.php';
 session_start();
 
 $id = $_GET['id'];

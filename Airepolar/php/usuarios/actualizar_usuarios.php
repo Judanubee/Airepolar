@@ -1,7 +1,7 @@
 <?php
 ob_start(); // Iniciar el buffer de salida
 
-include 'Airepolar\db.php';
+include '../../db.php';
 session_start();
 
 // Obtener datos del formulario
@@ -19,24 +19,24 @@ if (!empty($new_password)) {
     if ($stmt === false) {
         die("Error en preparación de consulta: " . $conn->error);
     }
-    $stmt->bind_param("sssssi", $usuario, $new_password, $nombre, $rol, $id);
+    $stmt->bind_param("ssssi", $usuario, $new_password, $nombre, $rol, $id);
 } else {
     // Si no hay nueva contraseña, no la actualices
-    $sql = "UPDATE usuarios SET usuario=?, nombre=?, apellido=?, rol=? WHERE id=?";
+    $sql = "UPDATE usuarios SET usuario=?, nombre=?, rol=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         die("Error en preparación de consulta: " . $conn->error);
     }
-    $stmt->bind_param("ssssi", $usuario, $nombre, $rol, $id);
+    $stmt->bind_param("sssi", $usuario, $nombre, $rol, $id);
 }
 
 // Ejecutar la consulta
 if ($stmt->execute()) {
     // Si la actualización es exitosa, redirigir con mensaje de éxito
-    header("Location: /AirePolar/administrador/lista_usuarios.php?action=update&success=1");
+    header("Location: ../../administrador/lista_usuarios.php?action=update&success=1");
 } else {
     // Si ocurre un error, redirigir con mensaje de error
-    header("Location: /AirePolar/administrador/editar_usuario.php?action=update&error=" . urlencode($stmt->error));
+    header("Location: ../../administrador/lista_usuarios.php?action=update&error=" . urlencode($stmt->error));
 }
 
 $stmt->close();

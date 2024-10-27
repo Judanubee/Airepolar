@@ -39,8 +39,7 @@
             <label for="search">Buscar Usuario:</label>
             <input type="text" id="search" name="search" placeholder="Ingrese nombre, usuario o tipo">
             <button type="submit">Buscar</button>
-            <button class="button-link" onclick="window.location.href='lista_usuarios.php'; return false;">Actualizar</button>
-            <button class="button-link" onclick="window.location.href='administrador.php'; return false;">Agregar</button>
+            <button class="button-link" onclick="window.location.href='lista_usuarios.php'; return false;">limpiar busqueda</button>
         </form>
     </div>
     <div class="form-container">
@@ -50,15 +49,14 @@
                     <th>ID</th>
                     <th>Usuario</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
                     <th>Tipo de Usuario</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
             <?php   
-               include 'Airepolar\db.php';
-               session_start();
+               include '../db.php';
+                session_start();
 
                 // Filtrar resultados si hay una búsqueda
                 $search = isset($_GET['search']) ? $_GET['search'] : '';

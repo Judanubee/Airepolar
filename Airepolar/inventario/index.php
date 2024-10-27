@@ -1,6 +1,6 @@
 <?php
 // Configuración de la base de datos
-include 'db.php';
+include '../db.php';
 session_start();
 
 $message = "";
