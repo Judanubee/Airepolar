@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } elseif ($rol == 'Tecnico') {
                 header("Location: /Airepolar/tecnico/tecnico.html");
             } elseif ($rol == 'Cliente') {
-                header("Location: /Airepolar/catalogo/catalogo.php");
+                header("Location: cliente\catalogo.php");
             }
             exit();
         } else {
@@ -44,12 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script>alert('usuario o contraseña incorrectos.');
                   window.location.href='index.html';</script>";
         }
-    } else {
-        // Usuario no encontrado
-        echo "<script>alert('usuario o contraseña incorrectos.');
-              window.location.href='index.html';</script>";
     }
-
     // Cerrar la variable $stmt y la conexión
     $stmt->close();
     $conn->close();
