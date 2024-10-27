@@ -60,21 +60,6 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Stock</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Aquí va tu CSS personalizado */
-        .logout-button {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 0.5rem;
-            background-color: var(--primary-color);
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .logout-button:hover {
-            background-color: var(--dark-color);
-        }
-    </style>
 </head>
 <body>
     <!-- Barra de navegación con logo y opciones de menú -->
