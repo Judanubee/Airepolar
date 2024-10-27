@@ -3,7 +3,6 @@
 include 'db.php';
 session_start();
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Escapar caracteres especiales para evitar ataques
     $usuario = htmlspecialchars($_POST['usuario']);
@@ -38,18 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } elseif ($rol == 'Cliente') {
                 header("Location: cliente\catalogo.php");
             }
-            exit();
-        } else {
-            // Contraseña incorrecta
-            echo "<script>alert('usuario o contraseña incorrectos.');
-                  window.location.href='index.html';</script>";
-        }
-        else {
-            // Contraseña incorrecta
-            echo "<script>alert('usuario o contraseña incorrectos.');
-                  window.location.href='index.html';</script>";
-        }
+        
+        exit();
+    } else {
+        echo "<script>alert('Contraseña incorrecta.'); window.location.href='index.html';</script>";
     }
+} else {
+    echo "<script>alert('Usuario no encontrado.'); window.location.href='index.html';</script>";
+}
     // Cerrar la variable $stmt y la conexión
     $stmt->close();
     $conn->close();
