@@ -1,5 +1,6 @@
 <?php
-include 'db.php';
+
+include 'Airepolar\db.php';
 session_start();
 
 // Obtener datos del formulario

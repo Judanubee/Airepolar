@@ -1,7 +1,6 @@
 <?php
-include 'db.php';
+include 'Airepolar\db.php';
 session_start();
-
 // Validar el parámetro ID
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];

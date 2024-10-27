@@ -57,8 +57,8 @@
             </thead>
             <tbody>
             <?php   
-               include '../db.php';
-                session_start();
+               include 'Airepolar\db.php';
+               session_start();
 
                 // Filtrar resultados si hay una búsqueda
                 $search = isset($_GET['search']) ? $_GET['search'] : '';
