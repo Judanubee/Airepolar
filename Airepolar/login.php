@@ -3,6 +3,7 @@
 include 'db.php';
 session_start();
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Escapar caracteres especiales para evitar ataques
     $usuario = htmlspecialchars($_POST['usuario']);
