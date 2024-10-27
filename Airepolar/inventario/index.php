@@ -167,7 +167,7 @@ $result = $conn->query($sql);
     <div class="container-hero">
         <div class="container-logo">
             <i class="fa fa-area-chart" aria-hidden="true"></i>
-            <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
+            <h1 class="logo"><a href="/Airepolar/index.html">Clima Polar</a></h1>
         </div>
         <!-- Botón de Cerrar Sesión -->
         <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>

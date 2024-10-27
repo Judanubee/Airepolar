@@ -56,8 +56,8 @@
                 </tr>
             </thead>
             <tbody>
-            <?php
-                include '/Airepolar/db.php';
+            <?php   
+               include '../db.php';
                 session_start();
 
                 // Filtrar resultados si hay una búsqueda
@@ -75,13 +75,13 @@
                     // Recorrer y mostrar los resultados
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . $row['id_trabajador'] . "</td>";
+                        echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . $row['usuario'] . "</td>";
                         echo "<td>" . $row['nombre'] . "</td>";
                         echo "<td>" . $row['rol'] . "</td>";
                         echo "<td>
-                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id_trabajador'] . "'>Editar</a>
-                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id_trabajador'] . "'>Eliminar</a>
+                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id'] . "'>Editar</a>
+                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id'] . "'>Eliminar</a>
                             </td>";
                         echo "</tr>";
                     }
