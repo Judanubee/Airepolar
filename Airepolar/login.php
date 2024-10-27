@@ -43,6 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<script>alert('usuario o contraseña incorrectos.');
                   window.location.href='index.html';</script>";
         }
+        else {
+            // Contraseña incorrecta
+            echo "<script>alert('usuario o contraseña incorrectos.');
+                  window.location.href='index.html';</script>";
+        }
     }
     // Cerrar la variable $stmt y la conexión
     $stmt->close();
