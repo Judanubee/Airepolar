@@ -12,13 +12,6 @@ body {
     color: #333;
 }
 
-/* Contenedor principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Encabezado */
 header {
     background-color: #0f2027; /* Negro */
@@ -80,7 +73,7 @@ header {
 }
 
 .login-container h2 {
-    color: #007bb5; /* Negro */
+    color: #0f2027; /* Negro */
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.8rem;
@@ -106,7 +99,8 @@ header {
 }
 
 /* Botón */
-.submit-btn {
+.submit-btn,
+.logout-button {
     display: block;
     width: 100%;
     background-color: #007bb5; /* Azul más oscuro */
@@ -120,9 +114,11 @@ header {
     transition: background-color 0.3s ease;
     text-decoration: none;
     font-weight: bold;
+    margin-top: 10px; /* Separación entre botones */
 }
 
-.submit-btn:hover {
+.submit-btn:hover,
+.logout-button:hover {
     background-color: #005f8a; /* Azul aún más oscuro en hover */
 }
 
@@ -130,10 +126,34 @@ header {
 footer {
     text-align: center;
     padding: 15px;
-    background-color: #005f8a;
+    background-color: #0f2027;
     color: white;
     font-size: 0.9rem;
     margin-top: 20px;
+}
+
+/* Estilos para formulario de registro */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.register-form label {
+    margin-bottom: 5px;
+}
+
+.register-form input,
+.register-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 /* Responsividad */
@@ -142,176 +162,18 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
-    .login-container {
+
+    .login-container,
+    .register-form {
         padding: 20px;
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .submit-btn {
+    .submit-btn,
+    .logout-button {
         font-size: 0.9rem;
     }
 }
-/* Contenedor de la tabla */
-.table-container {
-    margin-top: 20px;
-    overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
-}
 
-/* Estilo de la tabla */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-table th, table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    color: #333; /* Texto gris oscuro */
-}
-
-table th {
-    background-color: #0f2027; /* Negro */
-    color: white;
-    font-weight: bold;
-}
-
-/* Alternar color en filas */
-table tbody tr:nth-child(even) {
-    background-color: #f0faff;
-}
-
-/* Botones de acciones (Editar, Eliminar) dentro de la tabla */
-table .action-button {
-    display: inline-block;
-    padding: 8px 12px;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-/* Botón de editar */
-table .action-button.edit {
-    background-color: #007bb5; /* Azul */
-}
-
-table .action-button.edit:hover {
-    background-color: #005f8a; /* Azul oscuro en hover */
-}
-
-/* Botón de eliminar */
-table .action-button.delete {
-    background-color: #dc3545; /* Rojo */
-}
-
-table .action-button.delete:hover {
-    background-color: #c82333; /* Rojo oscuro en hover */
-}
-/* Contenedor del formulario */
-.form-container {
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-}
-
-/* Título dentro del contenedor */
-.form-container h2 {
-    color: #0f2027; /* Color negro del encabezado */
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-/* Etiquetas y entradas de formulario */
-.form-container label {
-    color: #333; /* Gris oscuro */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-container input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-/* Botones del formulario */
-.form-container button {
-    background-color: #007bb5; /* Azul oscuro */
-    color: #ffffff; /* Blanco */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.form-container button:hover {
-    background-color: #005f8a; /* Azul más oscuro en hover */
-}
-
-/* Botón de enlace (por ejemplo, "Limpiar búsqueda") */
-.form-container .button-link {
-    background-color: transparent;
-    color: #007bb5;
-    border: none;
-    cursor: pointer;
-    text-decoration: underline;
-    font-size: 1rem;
-    padding: 0;
-    margin-left: 10px;
-}
-
-.form-container .button-link:hover {
-    color: #005f8a; /* Azul más oscuro en hover */
-}
-/* Estilo para filas de la tabla */
-table tbody tr {
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    margin-bottom: 10px;
-}
-
-/* Espaciado y alineación del contenido en celdas */
-table th, table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    color: #0f2027 ;
-}
-table th {
-    background-color: #005f8a;
-    color: #0f2027;
-    font-weight: bold;
-}
-
-/* Aplicar sombra solo a filas individuales (para visualización limpia) */
-table tbody tr {
-    display: table-row;
-    overflow: hidden;
-    border-spacing: 10px; /* Espaciado entre filas */
-}
-
-/* Alternar color en filas pares para resaltar */
-table tbody tr:nth-child(even) {
-    background-color: #f0faff;
-}

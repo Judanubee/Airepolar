@@ -55,6 +55,7 @@ if (isset($_GET['id'])) {
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,22 +67,22 @@ $conn->close();
 </head>
 <body>
     <!-- Encabezado con logo y botón de cerrar sesión -->
-    <div class="container-hero">
-        <div class="container-logo">
+    <div class="product-hero-container">
+        <div class="product-logo-container">
             <i class="fa fa-area-chart" aria-hidden="true"></i>
-            <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
+            <h1 class="product-logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
         </div>
-        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="product-logout-button">Cerrar sesión</button>
     </div>
 
     <!-- Contenedor principal del contenido -->
-    <div class="content">
-        <div class="form-container">
+    <div class="product-content">
+        <div class="product-form-container">
             <h1>Modificar Producto</h1>
             
             <!-- Mensaje de éxito o error -->
             <?php if ($message): ?>
-                <p class="<?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
+                <p class="product-message <?php echo strpos($message, 'exitosamente') !== false ? 'product-success-message' : 'product-error-message'; ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
             <?php endif; ?>
@@ -101,11 +102,11 @@ $conn->close();
                     <label for="precio">Precio:</label>
                     <input type="number" id="precio" name="precio" step="0.01" value="<?php echo htmlspecialchars($product['precio']); ?>" required>
                 </div>
-                <button type="submit">Modificar Producto</button>
+                <button type="submit" class="product-submit-button">Modificar Producto</button>
             </form>
             
             <!-- Botón para regresar a la lista de productos -->
-            <a href="index.php" class="btn-back">Regresar</a>
+            <a href="index.php" class="product-back-button">Regresar</a>
         </div>
     </div>
 </body>

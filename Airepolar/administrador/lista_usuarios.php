@@ -1,48 +1,49 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Administrador</title>
     <link rel="stylesheet" href="../css/index.css" />
-
 </head>
 <body>
 <header>
-    <div class="container-hero">
-        <div class="container hero">
-            <div class="customer-support">
+    <div class="userlist-container-hero">
+        <div class="userlist-hero">
+            <div class="userlist-customer-support">
                 <i class="fa-solid fa-headset"></i>
-                <div class="content-customer-support">
-                    <span class="text">Soporte al cliente</span>
-                    <span class="number">123-456-7890</span>
+                <div class="userlist-customer-support-content">
+                    <span class="userlist-support-text">Soporte al cliente</span>
+                    <span class="userlist-support-number">123-456-7890</span>
                 </div>
             </div>
 
-            <div class="container-logo">
+            <div class="userlist-logo-container">
                 <i class="fa fa-area-chart" aria-hidden="true"></i>
-                <h1 class="logo"><a href="../index.html">Clima Polar</a></h1>
+                <h1 class="userlist-logo"><a href="../index.html">Clima Polar</a></h1>
             </div>
 
-            <div class="container-user">
+            <div class="userlist-container-user">
                 <i class="fa-solid fa-user"></i>
                 <!-- Botón de Cerrar Sesión -->
-                <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+                <button onclick="window.location.href='/Airepolar/logout.php';" class="userlist-logout-button">Cerrar sesión</button>
             </div>
         </div>
     </div>
 </header>
-<br> <br><br>
-<div class="container">  
-    <div class="form-container">
+
+<br><br><br>
+<div class="userlist-main-container">
+    <div class="userlist-form-container">
         <h2>Lista de Usuarios</h2>
         <form method="GET" action="">
-            <label for="search">Buscar Usuario:</label>
-            <input type="text" id="search" name="search" placeholder="Ingrese nombre, usuario o tipo">
-            <button type="submit">Buscar</button>
-            <button class="button-link" onclick="window.location.href='lista_usuarios.php'; return false;">limpiar busqueda</button>
+            <label for="search" class="userlist-label">Buscar Usuario:</label>
+            <input type="text" id="search" name="search" placeholder="Ingrese nombre, usuario o tipo" class="userlist-search-input">
+            <button type="submit" class="userlist-search-button">Buscar</button>
+            <button class="userlist-clear-button" onclick="window.location.href='lista_usuarios.php'; return false;">Limpiar búsqueda</button>
         </form>
     </div>
-    <div class="form-container">
-        <table>
+    <div class="userlist-table-container">
+        <table class="userlist-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -77,8 +78,8 @@
                         echo "<td>" . $row['nombre'] . "</td>";
                         echo "<td>" . $row['rol'] . "</td>";
                         echo "<td>
-                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id'] . "'>Editar</a>
-                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id'] . "'>Eliminar</a>
+                                <a href='../php/usuarios/editar_usuario.php?id=" . $row['id'] . "' class='userlist-edit-link'>Editar</a>
+                                <a href='../php/usuarios/borrar_usuario.php?id=" . $row['id'] . "' class='userlist-delete-link'>Eliminar</a>
                             </td>";
                         echo "</tr>";
                     }
@@ -93,5 +94,3 @@
 </div>
 </body>
 </html>
-
-

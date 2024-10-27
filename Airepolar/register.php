@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Cerrar el statement del check_email
-        $check_email->close();
+        // Cerrar el statement del check_usuario
+        $check_usuario->close();
     } else {
         // Mostrar el error si la preparación falla
         echo "Error en la preparación de la consulta: " . $conn->error;
@@ -59,17 +59,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
-    <link rel="stylesheet" href="css/index.css" />
-    <!-- Formulario con token CSRF -->
-<form action="register.php" method="post">
-    Nombre: <input type="text" name="nombre" required>
+
+<link rel="stylesheet" href="css/index.css" />
+<!-- Formulario con token CSRF -->
+<form action="register.php" method="post" class="formulario-registro-unique">
+    <label for="nombre" class="label-nombre-unique">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required class="input-nombre-unique">
     <br>
-    Usuario: <input type="text" name="usuario" required>
+    <label for="usuario" class="label-usuario-unique">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required class="input-usuario-unique">
     <br>
-    Contraseña: <input type="password" name="password" required>
+    <label for="password" class="label-password-unique">Contraseña:</label>
+    <input type="password" id="password" name="contraseña" required class="input-password-unique">
     <br>
-    Rol:
-    <select name="rol">
+    <label for="rol" class="label-rol-unique">Rol:</label>
+    <select id="rol" name="rol" class="select-rol-unique">
         <option value="Admin">Admin</option>
         <option value="Cliente">Cliente</option>
         <option value="Secretaria_Ventas">Secretaria Ventas</option>
@@ -78,6 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </select>
     <br>
     <!-- Campo oculto para el token -->
-    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['token']; ?>">
-    <button type="submit">Registrar</button>
+    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['token']; ?>" class="csrf-token-unique">
+    <button type="submit" class="boton-registrar-unique">Registrar</button>
 </form>

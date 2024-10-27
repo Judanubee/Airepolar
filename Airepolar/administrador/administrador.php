@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -10,74 +11,76 @@
 </head>
 <body>
 <header>
-    <div class="container-hero">
-        <div class="container hero">
-            <div class="customer-support">
+    <div class="admin-container-hero">
+        <div class="admin-container-hero-content">
+            <div class="admin-customer-support">
                 <i class="fa-solid fa-headset"></i>
-                <div class="content-customer-support">
-                    <span class="text">Soporte al cliente</span>
-                    <span class="number">123-456-7890</span>
+                <div class="admin-customer-support-info">
+                    <span class="admin-support-text">Soporte al cliente</span>
+                    <span class="admin-support-number">123-456-7890</span>
                 </div>
             </div>
 
-            <div class="container-logo">
+            <div class="admin-container-logo">
                 <i class="fa fa-area-chart" aria-hidden="true"></i>
-                <h1 class="logo"><a href="../index.html">Clima Polar</a></h1>
+                <h1 class="admin-logo"><a href="../index.html">Clima Polar</a></h1>
             </div>
 
-            <div class="container-user">
+            <div class="admin-container-user">
                 <i class="fa-solid fa-user"></i>
                 <!-- Botón de Cerrar Sesión -->
-                <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+                <button onclick="window.location.href='/Airepolar/logout.php';" class="admin-logout-button">Cerrar sesión</button>
             </div>
         </div>
     </div>
 </header>
+
 <br><br><br>
 <center><h1>Bienvenido Administrador</h1></center><br><br><br>
-<div class="container">
+
+<div class="admin-main-container">
     <!-- Mostrar mensajes de éxito o error -->
     <?php if (isset($_GET['action'])): ?>
         <?php if ($_GET['action'] == 'add'): ?>
             <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
-                <div class="message success">Usuario agregado exitosamente.</div>
+                <div class="admin-message admin-success-message">Usuario agregado exitosamente.</div>
             <?php elseif (isset($_GET['error'])): ?>
-                <div class="message error">Error al agregar el usuario: <?php echo htmlspecialchars($_GET['error']); ?></div>
+                <div class="admin-message admin-error-message">Error al agregar el usuario: <?php echo htmlspecialchars($_GET['error']); ?></div>
             <?php endif; ?>
         <?php elseif ($_GET['action'] == 'update'): ?>
             <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
-                <div class="message success">Usuario actualizado con éxito.</div>
+                <div class="admin-message admin-success-message">Usuario actualizado con éxito.</div>
             <?php elseif (isset($_GET['error'])): ?>
-                <div class="message error">Error al actualizar el usuario: <?php echo htmlspecialchars($_GET['error']); ?></div>
+                <div class="admin-message admin-error-message">Error al actualizar el usuario: <?php echo htmlspecialchars($_GET['error']); ?></div>
             <?php endif; ?>
         <?php endif; ?>
     <?php endif; ?>
 
-    <div class="form-container">
+    <div class="admin-form-container">
         <h2>Agregar Usuario</h2>
         <form action="../php/usuarios/agregar_usuario.php" method="POST">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required>
+            <label for="usuario" class="admin-label">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required class="admin-input">
         
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required>
+            <label for="contraseña" class="admin-label">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required class="admin-input">
         
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <label for="nombre" class="admin-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required class="admin-input">
             
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
+            <label for="apellido" class="admin-label">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required class="admin-input">
             
-            <label for="tipo_usuario">Tipo de Usuario:</label>
-            <select id="tipo_usuario" name="tipo_usuario" required>
+            <label for="tipo_usuario" class="admin-label">Tipo de Usuario:</label>
+            <select id="tipo_usuario" name="tipo_usuario" required class="admin-select">
                 <option value="administrador">Administrador</option>
                 <option value="op_inventario">Operador Inventario</option>
                 <option value="op_servicios">Operador Servicios</option>
                 <option value="admin_catalogo">Administrador Catálogo</option>
             </select>
             
-            <button type="submit">Agregar Usuario</button>
-            <button class="button-link" onclick="window.location.href='lista_usuarios.php'; return false;">Ver usuarios</button>
+            <button type="submit" class="admin-submit-button">Agregar Usuario</button>
+            <button class="admin-button-link" onclick="window.location.href='lista_usuarios.php'; return false;">Ver usuarios</button>
         </form>
     </div>
 </div>

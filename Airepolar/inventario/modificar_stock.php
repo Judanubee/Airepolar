@@ -53,6 +53,7 @@ if (isset($_GET['id'])) {
 
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -63,28 +64,28 @@ $conn->close();
 </head>
 <body>
     <!-- Barra de navegación con logo y opciones de menú -->
-    <div class="container-navbar">
-        <nav class="navbar">
-            <div class="container-logo">
-                <i class="logo-icon">️</i>
-                <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
+    <div class="stock-navbar-container">
+        <nav class="stock-navbar">
+            <div class="stock-logo-container">
+                <i class="stock-logo-icon">️</i>
+                <h1 class="stock-logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
             </div>
-            <div class="menu">
+            <div class="stock-menu">
                 <a href="index.php">Home</a>
                 <a href="agregar.php">Agregar</a>
-                <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+                <button onclick="window.location.href='/Airepolar/logout.php';" class="stock-logout-button">Cerrar sesión</button>
             </div>
         </nav>
     </div>
 
     <!-- Contenedor principal para el formulario de modificación de stock -->
-    <div class="content">
-        <div class="form-container">
+    <div class="stock-content">
+        <div class="stock-form-container">
             <h1>Modificar Stock</h1>
             
             <!-- Mensaje de éxito o error -->
             <?php if ($message): ?>
-                <p class="<?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
+                <p class="stock-message <?php echo strpos($message, 'exitosamente') !== false ? 'stock-success-message' : 'stock-error-message'; ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
             <?php endif; ?>
@@ -96,11 +97,11 @@ $conn->close();
                     <label for="stock">Stock:</label>
                     <input type="number" id="stock" name="stock" value="<?php echo htmlspecialchars($product['stock']); ?>" required>
                 </div>
-                <button type="submit">Modificar Stock</button>
+                <button type="submit" class="stock-submit-button">Modificar Stock</button>
             </form>
             
             <!-- Botón para regresar a la lista de productos -->
-            <a href="index.php" class="btn-back">Regresar</a>
+            <a href="index.php" class="stock-back-button">Regresar</a>
         </div>
     </div>
 </body>

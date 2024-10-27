@@ -37,23 +37,22 @@ $conn->close();
     <title>Agregar Producto</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   
 </head>
 <body>
-    <div class="container-hero">
-        <div class="container-logo">
+    <div class="add-product-container-hero">
+        <div class="add-product-logo-container">
             <i class="fa fa-area-chart" aria-hidden="true"></i>
-            <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
+            <h1 class="add-product-logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
         </div>
         <!-- Botón de Cerrar Sesión -->
-        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="add-product-logout-button">Cerrar sesión</button>
     </div>
 
-    <div class="content">
-        <div class="form-container">
+    <div class="add-product-content">
+        <div class="add-product-form-container">
             <h1>Agregar Producto</h1>
             <?php if ($message): ?>
-                <p class="message <?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
+                <p class="add-product-message <?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
             <?php endif; ?>
@@ -63,8 +62,8 @@ $conn->close();
                 <input type="text" name="descripcion" placeholder="Descripción" required>
                 <input type="text" name="precio" placeholder="Precio" required>
                 <input type="date" name="fecha_agregado" placeholder="Fecha Agregado" required>
-                <button type="submit">Agregar</button>
-                <a href="index.php" class="action-btn">Regresar</a>
+                <button type="submit" class="add-product-submit-btn">Agregar</button>
+                <a href="index.php" class="add-product-action-btn">Regresar</a>
             </form>
         </div>
     </div>

@@ -36,32 +36,32 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container-hero">
-        <div class="container-logo">
+    <div class="inventory-container-hero">
+        <div class="inventory-logo-container">
             <i class="fa fa-area-chart" aria-hidden="true"></i>
-            <h1 class="logo"><a href="/Airepolar/index.html">Clima Polar</a></h1>
+            <h1 class="inventory-logo"><a href="/Airepolar/index.html">Clima Polar</a></h1>
         </div>
         <!-- Botón de Cerrar Sesión -->
-        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="inventory-logout-button">Cerrar sesión</button>
     </div>
 
-    <div class="content">
-        <div class="table-container">
-            <div class="table-title">Inventario</div>
-            <div class="search-container">
+    <div class="inventory-content">
+        <div class="inventory-table-container">
+            <div class="inventory-table-title">Inventario</div>
+            <div class="inventory-search-container">
                 <form action="index.php" method="GET">
                     <input type="text" name="search" placeholder="Buscar por nombre o ID">
-                    <button type="submit">Buscar</button>
+                    <button type="submit" class="inventory-search-btn">Buscar</button>
                 </form>
-                <a href="agregar.php" class="btn">Agregar</a>
+                <a href="agregar.php" class="inventory-add-btn">Agregar</a>
             </div>
             <?php if ($message): ?>
-                <p class="message <?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
+                <p class="inventory-message <?php echo strpos($message, 'exitosamente') !== false ? 'success-message' : 'error-message'; ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
             <?php endif; ?>
             <?php if ($result->num_rows > 0): ?>
-                <table>
+                <table class="inventory-table">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -83,16 +83,16 @@ $result = $conn->query($sql);
                                 <td><?php echo htmlspecialchars($row['precio']); ?></td>
                                 <td><?php echo htmlspecialchars($row['fecha_agregado']); ?></td>
                                 <td>
-                                    <a href="modificar.php?id=<?php echo $row['id']; ?>" class="btn">Modificar</a>
-                                    <a href="?delete_id=<?php echo $row['id']; ?>" class="btn" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
-                                    <a href="modificar_stock.php?id=<?php echo $row['id']; ?>" class="btn">Modificar Stock</a>
+                                    <a href="modificar.php?id=<?php echo $row['id']; ?>" class="inventory-action-btn">Modificar</a>
+                                    <a href="?delete_id=<?php echo $row['id']; ?>" class="inventory-action-btn" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
+                                    <a href="modificar_stock.php?id=<?php echo $row['id']; ?>" class="inventory-action-btn">Modificar Stock</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
             <?php else: ?>
-                <p>No hay productos disponibles.</p>
+                <p class="inventory-no-products">No hay productos disponibles.</p>
             <?php endif; ?>
         </div>
     </div>

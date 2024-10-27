@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clima Polar - Inicio de Sesión</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -26,13 +27,14 @@
 
                 <div class="container-user">
                     <i class="fa-solid fa-user"></i>
+                    <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
                 </div>
             </div>
         </div>
     </header>
 
     <section class="login-section">
-        <div class="container login-container">
+        <div class="login-container">
             <h2>Inicio de Sesión</h2>
             <form class="login-form" action="login.php" method="POST">
                 <div>
@@ -46,10 +48,11 @@
                 <div>
                     <button type="submit" class="submit-btn">Iniciar Sesión</button>
                 </div>
-                <label for="registro">¿No estas registrado?</label>
+                <label for="registro">¿No estás registrado?</label>
                 <a href="/Airepolar/register.php" class="submit-btn">Registrarse</a>
             </form>
         </div>
+    </section>
 
     <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 </body>
