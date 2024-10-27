@@ -1,0 +1,155 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del cuerpo */
+body {
+    background-color: #f0faff; /* Blanco con un toque de cian */
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #0f2027; /* Negro */
+    color: white;
+    padding: 20px;
+}
+
+.container-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Soporte al cliente */
+.customer-support {
+    display: flex;
+    align-items: center;
+    color: #007bb5; /* Azul cian oscuro */
+}
+
+.customer-support i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Logo */
+.container-logo {
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Ícono de usuario */
+.container-user i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Sección de inicio de sesión */
+.login-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.login-container h2 {
+    color: #0f2027; /* Negro */
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Campos de formulario */
+.login-form div {
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    color: #333; /* Gris oscuro */
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+/* Botón */
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #007bb5; /* Azul más oscuro */
+    color: #ffffff; /* Blanco */
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background-color: #005f8a; /* Azul aún más oscuro en hover */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #0f2027;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .login-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+}
