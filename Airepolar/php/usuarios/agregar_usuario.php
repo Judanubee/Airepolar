@@ -19,10 +19,12 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $tipo_usuario = $_POST['tipo_usuario'];
 
-// Hashear la contraseña
+// Hashear la contraseña (puedes usar password_hash si deseas)
+$contraseña_hashed = password_hash($contraseña, PASSWORD_DEFAULT); // Asegúrate de usar un hash
+
 // Preparar la consulta SQL
 $sql = "INSERT INTO trabajadores (usuario, contraseña, nombre, apellido, tipo_usuario) 
-        VALUES ('$usuario', '$contraseña', '$nombre', '$apellido', '$tipo_usuario')";
+        VALUES ('$usuario', '$contraseña_hashed', '$nombre', '$apellido', '$tipo_usuario')";
 
 if ($conn->query($sql) === TRUE) {
     // Si la inserción es exitosa, redirigir con mensaje de éxito
@@ -35,3 +37,6 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 exit();
 ?>
+
+<!-- Botón de cerrar sesión -->
+<button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>

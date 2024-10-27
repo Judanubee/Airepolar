@@ -54,3 +54,6 @@ $stmt->close();
 $conn->close();
 ob_end_flush(); // Finalizar el buffer de salida y enviar la salida
 ?>
+
+<!-- Botón de cerrar sesión -->
+<button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>

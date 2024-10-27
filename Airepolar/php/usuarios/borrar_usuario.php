@@ -37,3 +37,6 @@ $conn->close();
 header("Location: ../../administrador/lista_usuarios.php");
 exit();
 ?>
+
+<!-- Botón de cerrar sesión -->
+<button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>

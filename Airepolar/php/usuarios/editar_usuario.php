@@ -77,6 +77,9 @@ $conn->close();
                 </div>
             </form>
         </div>
+        
+        <!-- Botón de cerrar sesión -->
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
     </div>
 </body>
 </html>
