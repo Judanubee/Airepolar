@@ -14,12 +14,13 @@ $rol = $_POST['rol'];
 // Preparar la consulta SQL
 if (!empty($new_password)) {
     // Si hay una nueva contraseña, usarla directamente (no recomendado por seguridad)
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);   
     $sql = "UPDATE usuarios SET usuario=?, contraseña=?, nombre=?, rol=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         die("Error en preparación de consulta: " . $conn->error);
     }
-    $stmt->bind_param("ssssi", $usuario, $new_password, $nombre, $rol, $id);
+    $stmt->bind_param("ssssi", $usuario, $hashed_password, $nombre, $rol, $id);
 } else {
     // Si no hay nueva contraseña, no la actualices
     $sql = "UPDATE usuarios SET usuario=?, nombre=?, rol=? WHERE id=?";
