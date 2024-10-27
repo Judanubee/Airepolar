@@ -1,43 +1,3 @@
-<?php
-// Configuración de la base de datos
-include 'db.php';
-session_start();
-
-// Procesar el formulario de modificación
-$message = '';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $descripcion = $_POST['descripcion'];
-    $precio = $_POST['precio'];
-
-    $sql = "UPDATE productos SET nombre=?, descripcion=?, precio=? WHERE id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ssdi', $nombre, $descripcion, $precio, $id);
-
-    if ($stmt->execute()) {
-        $message = "Producto modificado exitosamente";
-    } else {
-        $message = "Error al modificar el producto";
-    }
-
-    $stmt->close();
-}
-
-// Obtener los datos del producto
-$id = $_GET['id'];
-$sql = "SELECT * FROM productos WHERE id=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$product = $result->fetch_assoc();
-
-if (!$product) {
-    die("Producto no encontrado");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -60,7 +20,7 @@ if (!$product) {
         }
         .container-hero {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background-color: var(--primary-color);
             padding: 1rem;
@@ -80,6 +40,18 @@ if (!$product) {
             font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: -1px;
+        }
+        .logout-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .logout-button:hover {
+            background-color: var(--dark-color);
         }
         .content {
             display: flex;
@@ -164,6 +136,7 @@ if (!$product) {
             <i class="fa fa-area-chart" aria-hidden="true"></i>
             <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
         </div>
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button> <!-- Botón de cerrar sesión -->
     </div>
 
     <div class="content">

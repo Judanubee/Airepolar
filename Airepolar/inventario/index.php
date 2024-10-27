@@ -36,10 +36,10 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #007bff; /* Azul primario */
-            --background-color: #f8f9fa; /* Color de fondo claro */
-            --dark-color: #343a40; /* Color oscuro */
-            --highlight-color: #0056b3; /* Azul más oscuro para botones */
+            --primary-color: #007bff;
+            --background-color: #f8f9fa;
+            --dark-color: #343a40;
+            --highlight-color: #0056b3;
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -49,7 +49,7 @@ $result = $conn->query($sql);
         }
         .container-hero {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background-color: var(--primary-color);
             padding: 1rem;
@@ -86,9 +86,9 @@ $result = $conn->query($sql);
         }
         .table-title {
             font-size: 2.5rem;
-            color: var(--primary-color); /* Color del título */
+            color: var(--primary-color);
             margin-bottom: 1rem;
-            border-bottom: 2px solid var(--primary-color); /* Línea debajo del título */
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 0.5rem;
             text-align: center;
         }
@@ -149,6 +149,18 @@ $result = $conn->query($sql);
         .error-message {
             color: red;
         }
+        .logout-button {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        .logout-button:hover {
+            background-color: #ff4d4d;
+        }
     </style>
 </head>
 <body>
@@ -157,6 +169,8 @@ $result = $conn->query($sql);
             <i class="fa fa-area-chart" aria-hidden="true"></i>
             <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
         </div>
+        <!-- Botón de Cerrar Sesión -->
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
     </div>
 
     <div class="content">

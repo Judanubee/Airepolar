@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -7,21 +8,35 @@
     <link rel="stylesheet" href="../../css/styles.css" />
     <style>
         .btn {
-            background-color: var(--bluebonito); /* Usa la variable de color azul bonito */
-            color: #fff; /* Texto blanco */
-            padding: 1rem 2rem; /* Espaciado interno */
-            text-decoration: none; /* Sin subrayado */
-            border-radius: 0.5rem; /* Bordes redondeados */
-            font-size: 1.6rem; /* Tamaño de fuente */
-            font-weight: 500; /* Grosor de la fuente */
-            display: inline-block; /* Hace que el enlace se comporte como un botón */
-            text-align: center; /* Centra el texto */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
-            margin-top: 1rem; /* Espaciado superior */
+            background-color: var(--bluebonito);
+            color: #fff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
         }
 
         .btn:hover {
-            background-color: var(--dark-color); /* Cambia a color oscuro al pasar el ratón */
+            background-color: var(--dark-color);
+        }
+
+        .logout-button {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background-color: var(--bluebonito);
         }
     </style>
 </head>
@@ -44,13 +59,14 @@
 
                 <div class="container-user">
                     <i class="fa-solid fa-user"></i>
+                    <!-- Botón de Cerrar sesión -->
+                    <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
                 </div>
             </div>
         </div>
     </header>
 </body>
 </html>
-
 
 <?php
 // Datos de conexión

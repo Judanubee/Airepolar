@@ -3,7 +3,6 @@
 include 'db.php';
 session_start();
 
-
 $message = "";
 
 // Procesar el formulario de agregar producto
@@ -40,10 +39,10 @@ $conn->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-           --primary-color: #5783bc;
-    --background-color: #cadffb;
-    --dark-color: #2d2c55;
-    --bluebonito: #5f95e7; /* Color azul bonito */
+            --primary-color: #5783bc;
+            --background-color: #cadffb;
+            --dark-color: #2d2c55;
+            --bluebonito: #5f95e7;
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -53,7 +52,7 @@ $conn->close();
         }
         .container-hero {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background-color: var(--primary-color);
             padding: 1rem;
@@ -144,6 +143,18 @@ $conn->close();
         .action-btn:hover {
             background-color: var(--dark-color);
         }
+        .logout-button {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        .logout-button:hover {
+            background-color: #ff4d4d;
+        }
     </style>
 </head>
 <body>
@@ -152,6 +163,8 @@ $conn->close();
             <i class="fa fa-area-chart" aria-hidden="true"></i>
             <h1 class="logo"><a href="/AirePolar/index.html">Clima Polar</a></h1>
         </div>
+        <!-- Botón de Cerrar Sesión -->
+        <button onclick="window.location.href='/Airepolar/logout.php';" class="logout-button">Cerrar sesión</button>
     </div>
 
     <div class="content">
